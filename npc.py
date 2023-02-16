@@ -15,9 +15,9 @@ class NPC(AnimatedSprite):
         self.attack_dist = randint(3, 6)
         self.speed = 0.03
         self.size = 20
-        self.health = 100
-        self.attack_damage = 10
-        self.accuracy = 0.15
+        self.health = 90
+        self.attack_damage = 5
+        self.accuracy = 0.1
         self.alive = True
         self.pain = False
         self.ray_cast_value = False
@@ -28,7 +28,6 @@ class NPC(AnimatedSprite):
         self.check_animation_time()
         self.get_sprite()
         self.run_logic()
-        # self.draw_ray_cast()
 
     def check_wall(self, x, y):
         return (x, y) not in self.game.map.world_map
@@ -194,38 +193,17 @@ class CacoDemonNPC(NPC):
                  scale=0.7, shift=0.27, animation_time=250):
         super().__init__(game, path, pos, scale, shift, animation_time)
         self.attack_dist = 1.0
-        self.health = 150
-        self.attack_damage = 25
-        self.speed = 0.05
-        self.accuracy = 0.35
+        self.health = 100
+        self.attack_damage = 15
+        self.speed = 0.04
+        self.accuracy = 0.2
 
 class CyberDemonNPC(NPC):
     def __init__(self, game, path='resources/sprites/npc/cyber_demon/0.png', pos=(11.5, 6.0),
                  scale=1.0, shift=0.04, animation_time=210):
         super().__init__(game, path, pos, scale, shift, animation_time)
         self.attack_dist = 6
-        self.health = 350
+        self.health = 250
         self.attack_damage = 15
         self.speed = 0.055
         self.accuracy = 0.25
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
